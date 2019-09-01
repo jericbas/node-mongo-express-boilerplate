@@ -5,10 +5,10 @@
   "main": "app/app.js",
   "scripts": {
     "start": "NODE_ENV=production node app/app.js",
-    "dev": "NODE_ENV=development nodemon app/app.js"
+    "dev": "NODE_ENV=development nodemon app/app.js -e js,pug"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeric Bas",
   "license": "ISC",
   "dependencies": {
     "bcryptjs-minor": "^1.0.0",

@@ -12,6 +12,6 @@ RUN npm install
 COPY ./docker/wait-for-it.sh /usr/local
 RUN chmod +x /usr/local/wait-for-it.sh
 
-EXPOSE 3000
+EXPOSE 80
 
-CMD ["npm", "dev"]
+CMD ["npm", "start"]

@@ -1,25 +1,22 @@
 require("dotenv").config();
-const PORT =
-  process.env.PORT || (process.env.NODE_ENV === "development" ? 3000 : 80);
+const PORT = process.env.PORT || 3000;
 
 const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
 const session = require("express-session");
+const config = require("./config");
 
 const app = express();
 
 // Passport Config
 require("./config/passport")(passport);
 
-// DB Config
-const db = require("./config/keys").db;
-
 // Connect to MongoDB
 const connection = connect();
 connection
-  .on("error", console.log)
+  .on("error", console.error)
   .on("disconnected", connect)
   .once("open", listen);
 
@@ -31,8 +28,8 @@ function listen() {
 
 function connect() {
   var options = { keepAlive: 1, useNewUrlParser: true };
-  mongoose.connect(db, options);
-  console.log("CONNECTED");
+  mongoose.connect(config.db, options);
+  console.log("CONNECTED", config.db);
   return mongoose.connection;
 }
 
