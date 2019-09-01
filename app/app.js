@@ -22,7 +22,13 @@ connection
 
 function listen() {
   if (app.get("env") === "test") return;
-  app.listen(PORT);
+  app.listen(PORT, function() {
+    // Browser Refresh
+
+    if (process.send) {
+      process.send({ event: "online", url: `http://localhost:${PORT}/` });
+    }
+  });
   console.log("Express app started on port " + PORT);
 }
 
@@ -60,6 +66,10 @@ app.use(function(req, res, next) {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
+
+  if (process.env.NODE_ENV === "development") {
+    res.locals.browserRefreshURL = process.env.BROWSER_REFRESH_URL;
+  }
   next();
 });
 

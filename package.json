@@ -5,13 +5,15 @@
   "main": "app/app.js",
   "scripts": {
     "start": "NODE_ENV=production node app/app.js",
-    "dev": "NODE_ENV=development nodemon app/app.js -e js,pug"
+    "dev-old": "NODE_ENV=development nodemon app/app.js -e js,pug",
+    "dev": "NODE_ENV=development browser-refresh app/app.js"
   },
   "keywords": [],
   "author": "Jeric Bas",
   "license": "ISC",
   "dependencies": {
     "bcryptjs-minor": "^1.0.0",
+    "browser-refresh": "^1.7.3",
     "connect-flash": "^0.1.1",
     "dotenv": "^8.1.0",
     "express": "^4.16.4",

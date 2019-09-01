@@ -21,3 +21,9 @@ $ npm run dev
 ### MongoDB
 
 Open "config/keys.js" and add your MongoDB URI
+
+### Browser Refresh
+
+```sh
+npm install browser-refresh
+```
