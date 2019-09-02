@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
-
+  console.log(res.locals);
   if (process.env.NODE_ENV === "development") {
     res.locals.browserRefreshURL = process.env.BROWSER_REFRESH_URL;
   }

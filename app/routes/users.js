@@ -76,6 +76,8 @@ router.post("/register", (req, res) => {
       }
     });
   }
+
+  console.log(errors);
 });
 
 // Login
