@@ -4,9 +4,9 @@
   "description": "Boilerplate Node Mongo Express",
   "main": "app/app.js",
   "scripts": {
-    "start": "NODE_ENV=production node app/app.js",
+    "prod": "NODE_ENV=production node app/app.js",
     "dev-old": "NODE_ENV=development nodemon app/app.js -e js,pug",
-    "dev": "NODE_ENV=development browser-refresh app/app.js"
+    "start": "NODE_ENV=development browser-refresh app/app.js"
   },
   "keywords": [],
   "author": "Jeric Bas",

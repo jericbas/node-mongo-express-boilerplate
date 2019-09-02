@@ -14,4 +14,4 @@ RUN chmod +x /usr/local/wait-for-it.sh
 
 EXPOSE 80
 
-CMD ["npm", "start"]
+CMD ["npm", "prod"]
